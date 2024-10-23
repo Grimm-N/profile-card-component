@@ -1,0 +1,165 @@
+// variables
+$body: hsl(185, 75%, 39%);
+$main-text: hsl(229, 23%, 23%);
+$shadow: hsla(229, 23%, 23%, 0.5);
+$text: hsl(227, 10%, 46%);
+$card: hsl(0, 0%, 59%);
+$normal: 400;
+$bold: 700;
+
+@font-face {
+    font-family: 'KumbhSans';
+    src: url('./fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf') format('truetype');
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; 
+        transform: scale(0.75); 
+    }
+    50% {
+        opacity: 0; 
+        transform: scale(0.85); 
+    }
+    100% {
+        opacity: 1; 
+        transform: scale(1);
+    }
+}
+
+body {
+    font-family: 'KumbhSans';
+    font-weight: $normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    background-image: url('./images/bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    .card {
+        height: 23.5rem;
+        max-height: 100%;
+        width: 20.5rem;
+        max-width: 100%;
+        border-radius: 0.9rem;
+        background-color: white;
+        position: relative;
+        opacity: 0; 
+        animation: fadeIn 0.75s ease-in-out forwards; 
+        margin: 0 1.5rem;
+        box-shadow: 1rem 1rem 2rem $shadow,
+                    -1rem 1rem 2rem $shadow;
+
+        @media (min-width: 30rem) {
+            height: 23.375rem;
+            width: 22rem;
+        }
+
+
+        &__cover {
+            border-radius: 0.9rem 0.9rem 0 0;
+            height: 8.875rem;
+        }
+
+        &__profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); 
+            top: 6rem; 
+            width: 100%; 
+            
+            &-image {
+                border-radius: 50%;
+                outline: 5px solid white;
+                margin-bottom: 1.7rem;
+                cursor: pointer;
+            }
+
+            &-name {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                gap: 0.5rem;
+                margin-bottom: 0.75rem;
+
+                & h2 {
+                    font-size: 1.1rem;
+                    font-weight: $bold;
+                    color: $main-text;
+                    cursor: pointer;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: $body;
+                    }
+                }
+
+                & p {
+                    font-size: 1.1rem;
+                    color: $text;
+                }
+            }
+
+            &-address {
+                font-size: 0.9rem;
+                color: $text;
+                margin-bottom: 1.5rem;
+            }
+
+            &-divider {
+                width: 100%;
+                height: 1px;
+                background-color: $card;
+                opacity: 0.3;
+            }
+            
+            &-statistics {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+                margin-top: 1.7rem;
+
+                &-followers, &-likes, &-photos {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.5rem;
+                    justify-content: center;
+                
+                    & h3 {
+                        font-size: 1.1rem;
+                        font-weight: $bold;
+                        color: $main-text;
+                        cursor: pointer;
+                        transition: color 0.3s ease;
+
+                        &:hover {
+                            color: $body;
+                        }
+                    }
+
+                    & p {
+                        font-size: 0.6rem;
+                        color: $text;
+                        letter-spacing: 0.15em;
+                    }
+                }
+            }
+        }
+    }
+
+
+    footer {
+        display: none;
+    }
+}
