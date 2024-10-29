@@ -1,10 +1,10 @@
 # Profile card component solution (HTML, SCSS)
+![web 1614px](./screenshots/web.png)
 
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -22,10 +22,6 @@
 
 Additionals:
 - You can see additional hover effects on elements that could lead to additional information, like who liked the profile, follower details, photo portfolios, etc. These subtle interactions make the design more dynamic and ready for future functionality. 
-
-### Screenshot
-
-![web 1614px](./screenshots/web.png)
 
 ### Links
 
